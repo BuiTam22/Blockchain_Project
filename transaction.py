@@ -1,4 +1,5 @@
 import hashlib
+import time
 
 class Transaction:
     def __init__(self, sender, receiver, amount):

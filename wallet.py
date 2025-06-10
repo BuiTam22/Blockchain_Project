@@ -1,5 +1,7 @@
 import hashlib
 import random
+from transaction import Transaction
+
 
 class Wallet:
     def __init__(self, owner):
@@ -9,7 +11,7 @@ class Wallet:
 
     def generate_keys(self):
         """Tạo khóa giả lập"""
-        private_key = hashlib.sha256(str(random.randint(0, 1e6)).encode()).hexdigest()
+        private_key = hashlib.sha256(str(random.randint(0, int(1e6))).encode()).hexdigest()
         public_key = hashlib.sha256(private_key.encode()).hexdigest()
         return private_key, public_key
 
